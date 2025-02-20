@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss'; // Ensure this is renamed to .scss
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'nhsuk-frontend/packages/nhsuk.scss'; // NHS.UK CSS
+import 'nhsuk-frontend/packages/nhsuk';    // NHS.UK JavaScript
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
