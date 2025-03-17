@@ -87,7 +87,7 @@ button {
 .header-buttons button {
   padding: 12px 24px; /* Bigger buttons */
   border: none;
-  border-radius: none; /* Slightly larger border radius */
+  border-radius: 0; /* Slightly larger border radius */
   background-color: #003eb3; /* Button color */
   color: white; /* Text color */
   font-size: 0.8rem; /* Adjust font size if needed */
@@ -188,7 +188,7 @@ button {
 .custom-arrow {
   position: absolute;
   top: 50%;
-  right: 0%;
+  right: 0;
   transform: translateY(-50%);
   width: 42px;
   height: 42px;
@@ -260,4 +260,10 @@ button {
   width: 100%;
   max-width: 1200px;
   margin-top: 40px; /* Space below the search and filter */
+
+
+  /**/
+  .event-creation-container {
+    display: flex;
+  }
 }

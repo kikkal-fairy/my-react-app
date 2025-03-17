@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useState } from "react";
+import EventForm from "../components/EventForm";
+import EventList from "../components/EventList";
 
 const ActivityDashboardPage = () => {
-  return (
-    <div className="dashboard-container">
-      <h1>Activity Dashboard</h1>
-      <p>Manage and create activity posts.</p>
-      <button className="create-button">Create New Activity</button>
-      <h2>Recent Activities</h2>
-      <ul>
-        <li>🏥 Healthcare Workshop - 10 Participants</li>
-        <li>💡 Medical Research Talk - 15 Participants</li>
-        <li>📚 Training Session - 20 Participants</li>
-      </ul>
-    </div>
-  );
+    const [showForm, setShowForm] = useState(false);
+    const [refresh, setRefresh] = useState(false);
+
+    return (
+        <div className="dashboard-container">
+            <h1 className="text-2xl font-bold mb-4">Activity Dashboard</h1>
+            <p className="mb-4">Manage and create activity posts.</p>
+
+            {/* Toggle the event form */}
+            <button
+                className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
+                onClick={() => setShowForm(!showForm)}
+            >
+                {showForm ? "Close Form" : "Create New Activity"}
+            </button>
+
+            {/* Show Event Form */}
+            {showForm && <EventForm onEventAdded={() => setRefresh(!refresh)} />}
+
+            {/* List of Events */}
+            <h2 className="text-xl font-semibold mt-6 mb-2">Recent Activities</h2>
+            <EventList key={refresh} />
+        </div>
+    );
 };
 
 export default ActivityDashboardPage;
