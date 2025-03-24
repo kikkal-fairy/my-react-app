@@ -8,12 +8,11 @@ const ActivityDashboardPage = () => {
 
     return (
         <div className="dashboard-container">
-            <h1 className="text-2xl font-bold mb-4">Activity Dashboard</h1>
-            <p className="mb-4">Manage and create activity posts.</p>
+            <h1>Activity Dashboard</h1>
+            <p>Manage and create activity posts.</p>
 
             {/* Toggle the event form */}
             <button
-                className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
                 onClick={() => setShowForm(!showForm)}
             >
                 {showForm ? "Close Form" : "Create New Activity"}
@@ -23,7 +22,7 @@ const ActivityDashboardPage = () => {
             {showForm && <EventForm onEventAdded={() => setRefresh(!refresh)} />}
 
             {/* List of Events */}
-            <h2 className="text-xl font-semibold mt-6 mb-2">Recent Activities</h2>
+            <h2>Recent Activities</h2>
             <EventList key={refresh} />
         </div>
     );

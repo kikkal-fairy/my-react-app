@@ -19,7 +19,7 @@ const EventList = () => {
     return (
         <div>
             <h1>Upcoming Events</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message if there's one */}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
             {events.length === 0 ? (
                 <p>No events available.</p>
             ) : (
