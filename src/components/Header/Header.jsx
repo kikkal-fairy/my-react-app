@@ -4,6 +4,8 @@ import NESLogo from '../../assets/nes-logo.png';
 import './Header.css';
 
 
+import { Link } from 'react-router';
+import NESLogo from '../assets/nes-logo.png';
 
 const Header = () => {
   return (

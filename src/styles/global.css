@@ -17,3 +17,252 @@ button {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
 }
+
+/* Nav Bar */
+.nav-bar {
+  background-color: #002c7f; 
+  padding: 1rem;
+  text-align: center;
+  font-weight: 100;
+
+}
+
+.nav-bar a {
+  color: white;
+  margin: 0 1.2rem;
+  text-decoration: none;
+  font-weight: 100; /* Lighter font weight */
+  padding: 15px 15px; /* Add padding for better click area */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+ 
+}
+
+.nav-bar a:last-child {
+  border-right: none;
+}
+
+.nav-bar a:hover {
+  padding: 12px 15px;
+  background-color: #001a4b;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between; /* Aligns children to the edges */
+  align-items: center; /* Vertically centers the content */
+  padding: 7px 20px;
+  background-color: white; /* Changed to white */
+  border-bottom: 1px solid #ddd; /* Optional: Keep the border for separation */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ensures the container takes full width */
+}
+
+.logo {
+  height: 150px;
+  width: auto;
+}
+
+.header-text h1 {
+  font-weight: 700; /* Bold weight for main header text */
+}
+
+.header-text h4 {
+  font-weight: 100; /* Light weight for h4 in header */
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+  margin-left: 15px; /* Pushes the buttons to the right */
+  margin-top: 3px;
+  margin-bottom: 70px;
+}
+
+.header-buttons button {
+  padding: 12px 24px; /* Bigger buttons */
+  border: none;
+  border-radius: 0; /* Slightly larger border radius */
+  background-color: #003eb3; /* Button color */
+  color: white; /* Text color */
+  font-size: 0.8rem; /* Adjust font size if needed */
+  cursor: pointer;
+  font-weight: 100;
+  transition: background-color 0.3s ease;
+  height: 50px;
+}
+
+.header-buttons button:hover {
+  background-color: #002c7f; /* Darker shade of black for hover */
+}
+
+.login-panel-button {
+  width: 100%;
+  background-color: #007f3b;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  height: 50px;
+}
+
+.login-panel-button:hover {
+  background-color: #005f2d;
+}
+
+/* Filter Container */
+.filter-container {
+  width: 100%;
+  max-width: 300px;
+  margin: 150px 0 0 50px;
+  padding: 1.5rem;
+  background-color: lightgrey;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Filter Content */
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between filter items */
+}
+
+/* Filter Item */
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Space between label and dropdown */
+}
+
+/* Label for Filter Items */
+.filter-item label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333; /* Adjust label color */
+  margin-bottom: 1rem; /* Space between label and dropdown */
+}
+
+/* Dropdown Wrapper */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Dropdown Box */
+.dropdown-box {
+  width: 300px;
+  height: 50px;
+  padding: 0.5rem 50px 0.5rem 0.5rem; /* Add padding on the right for the arrow */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  font-size: 1rem;
+}
+
+/* Focus State */
+.dropdown-box:focus {
+  border-color: black; /* Keep the border black on focus */
+  outline: none; /* Remove the default browser outline */
+  box-shadow: none; /* Remove any box shadow if not needed */
+}
+
+/* Custom Arrow */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: rgb(17, 15, 15); /* Black background */
+  border: 2px solid black;
+  border-radius: 4px; /* Optional: Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Ensure clicks go to the select box */
+  z-index: 1; /* Ensure it appears above the dropdown */
+}
+
+.custom-arrow img {
+  width: 30px; /* Adjust icon size */
+  height: 30px;
+}
+
+/* Root Variables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #007f3b;
+  --background-color: #f0f4f8;
+  --text-color: #333;
+}
+
+/* Homepage Layout */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Filter and Search Bar Container */
+.filter-search-container {
+  display: flex;
+  flex-direction: row; /* Place filter and search bar side by side */
+  justify-content: space-between; /* Filter on the left, search bar on the right */
+  align-items: flex-start; /* Align items at the top */
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+  margin-top: 20px; /* Space below the nav bar */
+  gap: 20px; /* Space between filter and search bar */
+}
+
+/* Filter Container */
+.filter-container {
+  flex: 0 0 300px; /* Fixed width for the filter */
+  margin: 0; /* Remove default margin */
+}
+
+/* Search Bar */
+.filter-search-bar {
+  flex: 1; /* Take up remaining space */
+  max-width: 600px; /* Limit search bar width */
+}
+
+.filter-search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Sample Data Section */
+.sample-data-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px; /* Space below the search and filter */
+
+
+  /**/
+  .event-creation-container {
+    display: flex;
+  }
+}

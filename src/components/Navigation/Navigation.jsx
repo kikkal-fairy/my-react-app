@@ -1,8 +1,6 @@
 // components/Navigation.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navigation.css';
-
+import { Link } from 'react-router';
 
 const Navigation = () => {
   return (
