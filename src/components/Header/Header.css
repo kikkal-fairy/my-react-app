@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    height: 150px;
+    width: auto;
+  }
+  
+  .header-text h1 {
+    font-weight: 700;
+  }
+  
+  .header-text h4 {
+    font-weight: 100;
+  }
+  
+  .header-buttons {
+    display: flex;
+    gap: 12px;
+    margin-left: 15px;
+    margin-top: 3px;
+    margin-bottom: 70px;
+  }
+  
+  .header-buttons button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #003eb3;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: 100;
+    transition: background-color 0.3s ease;
+    height: 50px;
+  }
+  
+  .header-buttons button:hover {
+    background-color: #002c7f;
+  }
+  

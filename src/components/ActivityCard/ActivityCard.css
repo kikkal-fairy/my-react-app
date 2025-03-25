@@ -1,0 +1,39 @@
+.activity-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    max-width: 800px;
+  }
+  
+  .tag {
+    display: inline-block;
+    background-color: #a259ff;
+    color: white;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .activity-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 12px 0 8px;
+  }
+  
+  .activity-description {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .activity-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+    color: #444;
+  }
+  

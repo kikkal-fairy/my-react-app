@@ -1,12 +1,13 @@
 // components/Navigation.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navigation.css';
+
 
 const Navigation = () => {
   return (
     <nav className="nav-bar">
       <Link to="/">Home</Link>
-    
       <Link to="/dashboard">Dashboard</Link>
       <Link to="/activity-detail">Activity Details</Link>
       <Link to="/search">Search</Link>

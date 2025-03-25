@@ -1,0 +1,24 @@
+.filter-search-container {
+    padding: 16px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .content-container {
+    display: flex;
+    gap: 32px;
+    padding: 16px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: flex-start;
+  }
+  
+  .filter-column {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .activity-column {
+    flex: 3;
+  }
+  

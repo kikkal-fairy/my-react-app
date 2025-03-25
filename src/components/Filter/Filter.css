@@ -1,0 +1,23 @@
+.filter-container {
+    padding: 16px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .filter-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .filter-item {
+    margin-bottom: 8px;
+  }
+  
+  .filter-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  
