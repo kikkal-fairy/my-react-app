@@ -1,39 +1,76 @@
 .activity-card {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 20px 0;
-    max-width: 800px;
-  }
-  
-  .tag {
-    display: inline-block;
-    background-color: #a259ff;
-    color: white;
-    font-size: 14px;
-    padding: 4px 12px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  .activity-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 12px 0 8px;
-  }
-  
-  .activity-description {
-    font-size: 16px;
-    margin-bottom: 16px;
-    color: #333;
-  }
-  
-  .activity-details {
+  background-color: #fff;
+  border-radius: 0;
+  padding: 8px 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin: 20px 0;
+  max-width: 800px;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #8454FF;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.activity-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 12px 0;
+  line-height: 36px;
+}
+
+.activity-description {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 16px;
+  line-height: 27px;
+}
+.activity-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* wider spacing between items */
+  row-gap: 25px;
+  align-items: flex-start;
+}
+
+.activity-details div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+  .detail-item {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 14px;
-    color: #444;
+    align-items: center;
+    gap: 8px;
+    min-width: 0; 
+    width: 100%;
+    max-width: 220px;
+    font-size: 16px;
+    color: #333;
+    line-height: 24px;
+    font-weight: 600;
+    word-wrap: break-word;
   }
-  
+
+  .detail-item span {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex: 1;
+  }

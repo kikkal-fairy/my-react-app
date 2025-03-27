@@ -47,21 +47,40 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <div className="filter-search-container">
-        <FilterSearchBar onSearch={handleSearch} />
-      </div>
+    
 
       <div className="content-container">
         <div className="filter-column">
           <Filter />
         </div>
-
+       
         <div className="activity-column">
-          <h2>Latest Opportunities</h2>
-          {activities.map((activity, index) => (
-            <ActivityCard key={index} {...activity} />
-          ))}
-        </div>
+  {/* Search Bar on Top */}
+  <div className="search-bar-wrapper">
+    <FilterSearchBar onSearch={handleSearch} />
+  </div>
+
+  {/* Activity count + Sort */}
+  <div className="activity-list-header">
+    <div className="activity-count">
+      <strong>Showing 5</strong> of 90 Activities
+    </div>
+    <div className="sort-select-button">
+      <div className="sort-label">Recent</div>
+      <div className="arrow-wrapper">
+        <div className="arrow-icon" />
+      </div>
+    </div>
+  </div>
+
+  {/* Activity Cards */}
+  {activities.map((activity, index) => (
+    <ActivityCard key={index} {...activity} />
+  ))}
+</div>
+
+    
+
       </div>
     </div>
   );
