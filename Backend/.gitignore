@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Dependency directories
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# SQLite database (if you're using SQLite)
+*.db
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional)
+.vscode/
