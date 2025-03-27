@@ -34,8 +34,8 @@
 // export default HomePage;
 
 import React from 'react';
-import FilterSearchBar from '../components/FilterSearchBar';
-import Filter from '../components/Filter';
+import FilterSearchBar from '../components/FilterSearchBar/FilterSearchBar';
+import Filter from '../components/Filter/Filter';
 import ActivitiesFor from '../components/ActivitiesFor'; // Import the new ActivitiesFor component
 
 const HomePage = () => {
