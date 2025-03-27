@@ -2,7 +2,7 @@
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder.\
+Builds the app for production to the `dist` folder.
 
 ### `npm run dev`
 
