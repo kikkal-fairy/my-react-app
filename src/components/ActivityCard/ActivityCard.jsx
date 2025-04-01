@@ -8,39 +8,39 @@ import handshakeIcon from '/src/assets/icons/handshake.svg';
 import accessTimeIcon from '/src/assets/icons/access_time.svg';
 import workIcon from '/src/assets/icons/work.svg';
 
-const ActivityCard = ({ tag, title, description, location, date, audience, format, duration, provider }) => {
+const ActivityCard = ({ activity }) => {
   return (
     <div className="activity-card">
-      <span className="tag">{tag}</span>
+      <span className="tag">{activity.tag}</span>
 
-      <h3 className="activity-title">{title}</h3>
+      <h3 className="activity-title">{activity.title}</h3>
 
-      <p className="activity-description">{description}</p>
+      <p className="activity-description">{activity.description}</p>
 
       <div className="activity-details">
         <div className="detail-item">
           <img src={locationIcon} alt="Location" className="icon" />
-          <span>{location}</span>
+          <span>{activity.location}</span>
         </div>
         <div className="detail-item">
           <img src={calendarIcon} alt="Date" className="icon" />
-          <span>{date}</span>
+          <span>{activity.date}</span>
         </div>
         <div className="detail-item">
           <img src={peopleIcon} alt="Audience" className="icon" />
-          <span>{audience}</span>
+          <span>{activity.audience}</span>
         </div>
         <div className="detail-item">
           <img src={handshakeIcon} alt="Format" className="icon" />
-          <span>{format}</span>
+          <span>{activity.format}</span>
         </div>
         <div className="detail-item">
           <img src={accessTimeIcon} alt="Duration" className="icon" />
-          <span>{duration}</span>
+          <span>{activity.duration}</span>
         </div>
         <div className="detail-item">
           <img src={workIcon} alt="Provider" className="icon" />
-          <span>{provider}</span>
+          <span>{activity.provider}</span>
         </div>
       </div>
     </div>
