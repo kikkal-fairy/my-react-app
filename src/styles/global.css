@@ -266,3 +266,123 @@ button {
     display: flex;
   }
 }
+
+/* Login/Register */
+
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #002c7f;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.login-box {
+  height: 80vh;
+  width: 55vw;
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.login-box .logo {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 25px;
+  height: 200px;
+  width: auto;
+}
+
+.login-box h2 {
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+
+.login-box label {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: left;
+}
+
+.login-box span {
+  color: #FF0000;
+}
+
+.input-container {
+  width: 30%;
+  margin: auto;
+  text-align: left;
+}
+
+.input-box {
+  height: 50px;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+.confirm-button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 0;
+  background-color: #003eb3;
+  color: #FFFFFF;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 100;
+  transition: background-color 0.3s ease;
+  height: 50px;
+  width: 30%;
+}
+
+.confirm-button:hover {
+  background-color: #002c7f;
+}
+
+.account-button {
+  color: #003eb3;
+}
+
+.account-button:hover {
+  color: #002c7f;
+}
+
+/* Login back button */
+
+.back-button {
+  color: #003eb3;
+  text-align: left;
+  text-decoration: none;
+}
+
+.back-button-container {
+  position: relative;
+  width: 150px;
+  float: left;
+  margin-left: 75px;
+  margin-top: 50px;
+}
+
+.back-button-container img {
+  height: 10px;
+  width: auto;
+}
+
+.back-button-container p {
+  text-decoration: none;
+}
+
+.back-button-container p:hover {
+  text-decoration: underline;
+}
+
+.placeholder {
+  color: transparent;
+}

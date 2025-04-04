@@ -3,6 +3,10 @@ import FilterSearchBar from '../../components/FilterSearchBar/FilterSearchBar';
 import Filter from '../../components/Filter/Filter';
 import './HomePage.css';
 
+import Header from '../../components/Header/Header.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import Navigation from '../../components/Navigation/Navigation.jsx';
+
 const HomePage = () => {
   
   const activities = [
@@ -45,6 +49,9 @@ const HomePage = () => {
   ];
 
   return (
+    <div>
+    <Header />
+    <Navigation />
     <div className="homepage">
       <div className="content-container">
         <div className="filter-column">
@@ -72,6 +79,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };

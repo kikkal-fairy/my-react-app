@@ -38,6 +38,10 @@ import FilterSearchBar from '../components/FilterSearchBar/FilterSearchBar';
 import Filter from '../components/Filter/Filter';
 import ActivitiesFor from '../components/ActivitiesFor'; // Import the new ActivitiesFor component
 
+import Header from '../../components/Header/Header.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import Navigation from '../../components/Navigation/Navigation.jsx';
+
 const HomePage = () => {
   const handleSearch = (searchTerm) => {
     console.log('Search Term:', searchTerm);
@@ -45,6 +49,9 @@ const HomePage = () => {
   };
 
   return (
+    <div>
+    <Header />
+    <Navigation />
     <div className="homepage">
       {/* Navigation Bar (already in your layout) */}
 
@@ -75,6 +82,8 @@ const HomePage = () => {
           <li>📌 NHS Career Guidance - Book a Session</li>
         </ul>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };
