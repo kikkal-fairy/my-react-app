@@ -1,0 +1,22 @@
+.icon-button {
+    background-color: #003EB3;
+    border: none;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: auto;
+    border-left: 1px solid #333333;
+  }
+  
+  .icon-image {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1); /* turns black icon white */
+  }
+
+  .icon-button:hover {
+    background-color: #002D80;
+  }
+  

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ActivityCardDisplay from '../../components/ActivityCardDisplay/ActivityCardDisplay';
 import './FilterSearchBar.css';
+import searchIcon from '../../assets/search.svg';
+import IconButton from '../IconButton/IconButton';
 
 const FilterSearchBar = ({ activities }) => {
 
@@ -32,6 +34,8 @@ const FilterSearchBar = ({ activities }) => {
           aria-label="Search activities"
           aria-describedby="search-description"
         />
+
+<IconButton icon={searchIcon} onClick={() => console.log("Search clicked")} />
       </div>
       <ActivityCardDisplay activitySearch={activitySearch} />
       <span id="search-description" className="visually-hidden">
