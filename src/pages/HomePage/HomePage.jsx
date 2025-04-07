@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FilterSearchBar from '../../components/FilterSearchBar/FilterSearchBar';
 import Filter from '../../components/Filter/Filter';
 import './HomePage.css';
-
 import Header from '../../components/Header/Header.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import Navigation from '../../components/Navigation/Navigation.jsx';
+import UserRoleSwitch from '../../components/UserRoleSwitch/UserRoleSwitch';
 
 const HomePage = () => {
+  const [selectedRole, setSelectedRole] = useState('individual');
   
   const activities = [
     {
@@ -48,6 +49,22 @@ const HomePage = () => {
     },
   ];
 
+  // 🔍 Filter logic based on role
+  const filteredActivities = activities.filter((activity) => {
+    const audience = activity.audience.toLowerCase();
+
+    if (selectedRole === 'individual') {
+      return audience.includes('student') || audience.includes('s4') || audience.includes('s5') || audience.includes('s6');
+    }
+
+    if (selectedRole === 'adviser') {
+      return audience.includes('educator') || audience.includes('teacher');
+    }
+
+    return true; // fallback
+  });
+
+
   return (
     <div>
     <Header />
@@ -55,11 +72,12 @@ const HomePage = () => {
     <div className="homepage">
       <div className="content-container">
         <div className="filter-column">
+        <UserRoleSwitch onRoleChange={(role) => console.log("Selected role:", role)}  />
           <Filter />
         </div>
        
         <div className="activity-column">
-          
+
         {/* Search Bar & Activity Cards */}
           <div className="search-bar-wrapper">
             <FilterSearchBar activities={activities} />
@@ -68,7 +86,7 @@ const HomePage = () => {
         {/* Activity count + sort -- move to component later */}
           <div className="activity-list-header">
             <div className="activity-count">
-              <strong>Showing 5</strong> of 90 Activities
+              <strong>Showing {filteredActivities.length}</strong> of 90 Activities
             </div>
             <div className="sort-select-button">
               <div className="sort-label">Recent</div>
