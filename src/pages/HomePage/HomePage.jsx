@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import FilterSearchBar from '../../components/FilterSearchBar/FilterSearchBar';
-import Filter from '../../components/Filter/Filter';
-import './HomePage.css';
+import ActivityCardDisplay from '../../components/ActivityCardDisplay/ActivityCardDisplay';
 import Header from '../../components/Header/Header.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import Navigation from '../../components/Navigation/Navigation.jsx';
 import UserRoleSwitch from '../../components/UserRoleSwitch/UserRoleSwitch';
+import Filter from '../../components/Filter/Filter';
+import './HomePage.css';
 
 const HomePage = () => {
   const [selectedRole, setSelectedRole] = useState('individual');
+  const [searchTerm, setSearchTerm] = useState('');
   
   const activities = [
     {
@@ -62,11 +64,14 @@ const HomePage = () => {
     }
 
     return true; // fallback
-  });
-
+  })
+  
+  .filter((activity) =>
+    activity.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div>
+    <>
     <Header />
     <Navigation />
     <div className="homepage">
@@ -77,29 +82,27 @@ const HomePage = () => {
         </div>
        
         <div className="activity-column">
+            <FilterSearchBar searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm} />
 
-        {/* Search Bar & Activity Cards */}
-          <div className="search-bar-wrapper">
-            <FilterSearchBar activities={activities} />
-          </div>
-
-        {/* Activity count + sort -- move to component later */}
           <div className="activity-list-header">
-            <div className="activity-count">
-              <strong>Showing {filteredActivities.length}</strong> of 90 Activities
-            </div>
-            <div className="sort-select-button">
-              <div className="sort-label">Recent</div>
-              <div className="arrow-wrapper">
-                <div className="arrow-icon" />
+              <div className="activity-count">
+                <strong>Showing {filteredActivities.length}</strong> of 90 Activities
+              </div>
+              <div className="sort-select-button">
+                <div className="sort-label">Recent</div>
+                <div className="arrow-wrapper">
+                  <div className="arrow-icon" />
+                </div>
               </div>
             </div>
-          </div>
+            <ActivityCardDisplay activitySearch={filteredActivities} />
+
         </div>
       </div>
     </div>
     <Footer />
-    </div>
+    </>
   );
 };
 

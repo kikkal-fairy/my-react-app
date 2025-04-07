@@ -1,9 +1,17 @@
+/* Activity Cards Container */
+.activity-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between cards */
+}
+
+
 .activity-card {
   background-color: #fff;
   border-radius: 0;
   padding: 8px 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  margin: 20px 0;
+  margin: 0;
   max-width: 800px;
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.6;
@@ -73,4 +81,13 @@
     overflow-wrap: break-word;
     white-space: normal;
     flex: 1;
+  }
+
+  /* Column Layout */
+  .activity-column {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    /* Remove gap here to prevent doubling up */
+    gap: 16px;
   }
