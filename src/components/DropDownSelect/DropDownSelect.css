@@ -90,3 +90,25 @@
     padding: 4px 0;
   }
   
+  .dropdown-item-wrapper {
+    position: relative;
+  }
+  
+  .checklist-box.flyout {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    border: 1px solid #767676;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 240px;
+    overflow-y: auto;
+    width: 250px;
+    z-index: 20;
+  }
+  

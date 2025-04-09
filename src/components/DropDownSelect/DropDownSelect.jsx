@@ -90,14 +90,16 @@ const DropDownSelect = ({
             </div>
           ) : (
             options.map((option) => (
-              <div key={option.label} className="dropdown-item" onClick={() => handleMainSelect(option)}>
+              <div key={option.label} className="dropdown-item-wrapper">
+                  <div className="dropdown-item" onClick={() => handleMainSelect(option)}>
                 <div className="main-option">
                   {option.label}
                   {option.subOptions && <span className="arrow">▶</span>}
                 </div>
+                </div>
 
                 {activeDropdown === option && option.subOptions && (
-                  <div className="checklist-box">
+                  <div className="checklist-box flyout">
                     {option.subOptions.map((sub, idx) => (
                       <label key={idx} className="sub-option">
                         <input
