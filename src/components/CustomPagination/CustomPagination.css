@@ -1,0 +1,40 @@
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .page-button {
+    padding: 6px 12px;
+    border: 1px solid #C0C0C0;
+    background-color: #EBEBEB;
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .page-button:hover:not(.active):not(:disabled) {
+    background-color: #d1d1d1;
+  }
+  
+  .page-button.active {
+    background-color: #003ebe;
+    color: white;
+  }
+  
+  .page-button.ellipsis {
+    background-color: #C0C0C0;
+    color: white;
+    cursor: default;
+  }
+  
+  .page-button.nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

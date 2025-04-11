@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Pagination } from '@mantine/core';
 import FilterSearchBar from '../../components/FilterSearchBar/FilterSearchBar';
 import ActivityCardDisplay from '../../components/ActivityCardDisplay/ActivityCardDisplay';
 import Header from '../../components/Header/Header.jsx';
@@ -6,12 +7,17 @@ import Footer from '../../components/Footer/Footer.jsx';
 import Navigation from '../../components/Navigation/Navigation.jsx';
 import UserRoleSwitch from '../../components/UserRoleSwitch/UserRoleSwitch';
 import Filter from '../../components/Filter/Filter';
+import CustomPagination from '../../components/CustomPagination/CustomPagination';
 import './HomePage.css';
 
 const HomePage = () => {
   const [selectedRole, setSelectedRole] = useState('individual');
   const [searchTerm, setSearchTerm] = useState('');
   
+    // ✅ [ADDED] Pagination state
+    const [activePage, setActivePage] = useState(1);
+    const itemsPerPage = 2;
+
   const activities = [
     {
       id: 1,
@@ -70,6 +76,12 @@ const HomePage = () => {
     activity.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+    // ✅ [ADDED] Paginate filtered results
+    const paginatedActivities = filteredActivities.slice(
+      (activePage - 1) * itemsPerPage,
+      activePage * itemsPerPage
+    );
+
   return (
     <>
     <Header />
@@ -98,9 +110,16 @@ const HomePage = () => {
             </div>
             <ActivityCardDisplay activitySearch={filteredActivities} />
 
+               {/* ✅ Use the custom pagination */}
+            <CustomPagination
+              totalPages={Math.ceil(filteredActivities.length / itemsPerPage)}
+              activePage={activePage}
+              setActivePage={setActivePage}
+            />
+            </div>
+
         </div>
       </div>
-    </div>
     <Footer />
     </>
   );

@@ -5,6 +5,9 @@ import "./Filter.css";
 
 export default function Filter() {
   const [selectedAudiences, setSelectedAudiences] = useState([]);
+  const [selectedActivities, setSelectedActivities] = useState([]); // ✅ Added: Activity state
+  const [selectedDate, setSelectedDate] = useState(""); // ✅ Added: Date state
+
 
   const activityOptions = [
     {
@@ -87,6 +90,8 @@ export default function Filter() {
             label="Activity Type"
             placeholder="Select Activity Type"
             options={activityOptions}
+            selectedValues={selectedActivities} // ✅ Added
+            onChange={setSelectedActivities}    // ✅ Added
           />
         </div>
 
@@ -149,6 +154,21 @@ export default function Filter() {
             options={timeCommitmentOptions}
           />
         </div>
+
+         {/* ✅ Added: Activity Date Picker with calendar icon */}
+         <div className="filter-item date-picker-wrapper">
+          <label className="dropdown-label">Activity Date</label>
+          <div className="date-input-container">
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={(e) => setSelectedDate(e.target.value)}
+              className="date-input"
+            />
+      
+          </div>
+        </div>
+        {/* ✅ End of date picker */}
       </div>
     </div>
   );
