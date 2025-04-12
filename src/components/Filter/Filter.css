@@ -14,6 +14,14 @@
     font-weight: 700;
     margin-bottom: 8px;
   }
+
+  /* Label for Filter Items */
+.filter-item label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333; /* Adjust label color */
+  margin-bottom: 1rem; /* Space between label and dropdown */
+}
   
   /* ✅ Added styling for calendar icon with date input */
 

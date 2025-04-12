@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pagination } from '@mantine/core';
+
 import FilterSearchBar from '../../components/FilterSearchBar/FilterSearchBar';
 import ActivityCardDisplay from '../../components/ActivityCardDisplay/ActivityCardDisplay';
 import Header from '../../components/Header/Header.jsx';

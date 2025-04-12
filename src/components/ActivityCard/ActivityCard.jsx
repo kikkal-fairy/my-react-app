@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import './ActivityCard.css';
-
 import locationIcon from '/src/assets/icons/location_on.svg';
 import calendarIcon from '/src/assets/icons/calendar_today.svg';
 import peopleIcon from '/src/assets/icons/people.svg';
@@ -10,6 +10,12 @@ import workIcon from '/src/assets/icons/work.svg';
 
 const ActivityCard = ({ activity }) => {
   return (
+    <Link
+    to={`/activity-detail/${activity.id}`}
+    state={{ activity }} // ✅ ADDED
+    className="activity-card-link" // ✅ ADDED for styling
+  >
+
     <div className="activity-card">
       <span className="tag">{activity.tag}</span>
 
@@ -44,6 +50,7 @@ const ActivityCard = ({ activity }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 
