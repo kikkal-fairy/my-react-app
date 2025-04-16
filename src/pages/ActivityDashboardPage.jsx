@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EventForm from "../components/EventForm";
+import EventForm from "/src/components/EventForm";
 
 
 const ActivityDashboardPage = () => {

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import FilterSearchBar from '../../components/FilterSearchBar/FilterSearchBar';
-import ActivityCardDisplay from '../../components/ActivityCardDisplay/ActivityCardDisplay';
-import UserRoleSwitch from '../../components/UserRoleSwitch/UserRoleSwitch';
-import Filter from '../../components/Filter/Filter';
-import CustomPagination from '../../components/CustomPagination/CustomPagination';
+import FilterSearchBar from '/src/components/FilterSearchBar/FilterSearchBar';
+import ActivityCardDisplay from '/src/components/ActivityCardDisplay/ActivityCardDisplay';
+import UserRoleSwitch from '/src/components/UserRoleSwitch/UserRoleSwitch';
+import Filter from '/src/components/Filter/Filter';
+import CustomPagination from '/src/components/CustomPagination/CustomPagination';
 import './HomePage.css';
 import '/src/styles/global.css';
 

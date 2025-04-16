@@ -1,21 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {MantineProvider} from "@mantine/core"; // ✅ ADDED
-import "./styles/global.css";
-import App from "./App.jsx";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import Login from "./components/Login/Login.jsx";
-import Register from "./components/Register/Register.jsx";
+import {MantineProvider} from "@mantine/core";
 
-import ActivityDashboardPage from "./pages/ActivityDashboardPage.jsx";
-import ActivityDetailPage from "./pages/ActivityDetailPage/ActivityDetailPage.jsx";
-import SearchPage from "./pages/SearchPage.jsx";
+import "/src/styles/global.css";
+import App from "/src/App.jsx";
 
-import AboutUsPage from "./pages/AboutUsPage/AboutUsPage.jsx";
-import ResourcesPage from "./pages/ResourcesPage.jsx";
-import LegalPage from "./pages/LegalPage.jsx";
-import Account from "./pages/AccountPage/Account.jsx";
+import HomePage from "/src/pages/HomePage/HomePage.jsx";
+import ActivityDashboardPage from "/src/pages/ActivityDashboardPage.jsx";
+import AboutUsPage from "/src/pages/AboutUsPage/AboutUsPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +24,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        {/* ✅ WRAPPED EVERYTHING IN MantineProvider */}
         <MantineProvider withGlobalStyles withNormalizeCSS>
             <RouterProvider router={router} />
         </MantineProvider>
