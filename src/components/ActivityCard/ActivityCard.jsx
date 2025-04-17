@@ -11,7 +11,7 @@ import workIcon from '/src/assets/icons/work.svg';
 const ActivityCard = ({ activity }) => {
   return (
     <Link
-    to={`/activity-detail/${activity.id}`}
+    to={`/ActivityDetail/${activity.id}`}
     state={{ activity }} // ✅ ADDED
     className="activity-card-link" // ✅ ADDED for styling
   >

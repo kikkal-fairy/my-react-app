@@ -10,6 +10,7 @@ const Navigation = () => {
       <Link to="/PartnerOrganisations">Partner Orginisations</Link>
       <Link to="/CareerGuidance">Career Guidance</Link>
       <Link to="/ApplicationGuidance">Application Guidance</Link>
+      <Link to="/ActivityDashboard">Add post (Temporary)</Link>
     </nav>
   );
 };

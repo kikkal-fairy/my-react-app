@@ -12,6 +12,7 @@ import AboutUsPage from "/src/pages/AboutUs/AboutUsPage.jsx";
 import PartnerOrganisationsPage from "/src/pages/PartnerOrganisations/PartnerOrganisationsPage.jsx";
 import CareerGuidancePage from "/src/pages/CareerGuidance/CareerGuidancePage.jsx";
 import ApplicationGuidancePage from "/src/pages/ApplicationGuidance/ApplicationGuidancePage.jsx";
+import ActivityDetailPage from "/src/pages/ActivityDetail/ActivityDetailPage";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,9 @@ const router = createBrowserRouter([
             {path: "/AboutUs", element: <AboutUsPage/>},
             {path: "/PartnerOrganisations", element: <PartnerOrganisationsPage/>},
             {path: "/CareerGuidance", element: <CareerGuidancePage/>},
-            {path: "/ApplicationGuidance", element: <ApplicationGuidancePage/>}
+            {path: "/ApplicationGuidance", element: <ApplicationGuidancePage/>},
+            {path: "/ActivityDetail/:id", element: <ActivityDetailPage/>},
+            {path: "/ActivityDashboard", element: <ActivityDashboardPage/>},
         ],
     },
 ]);
