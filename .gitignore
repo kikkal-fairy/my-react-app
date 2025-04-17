@@ -39,3 +39,4 @@ Thumbs.db
 
 # VS Code settings (optional)
 .vscode/
+node_modules
