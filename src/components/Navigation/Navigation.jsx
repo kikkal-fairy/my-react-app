@@ -6,10 +6,10 @@ const Navigation = () => {
   return (
     <nav className="nav-bar">
        <Link to="/" className="home-button">Home</Link>
-      <Link to="/aboutus">About Us</Link>
-      <Link to="/partnerOrg">Partner Orginisations</Link>
-      <Link to="/career">Career Guidance</Link>
-      <Link to="/applicationGuidance">Application Guidance</Link>
+      <Link to="/AboutUs">About Us</Link>
+      <Link to="/PartnerOrganisations">Partner Orginisations</Link>
+      <Link to="/CareerGuidance">Career Guidance</Link>
+      <Link to="/ApplicationGuidance">Application Guidance</Link>
     </nav>
   );
 };

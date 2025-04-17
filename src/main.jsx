@@ -6,9 +6,12 @@ import {MantineProvider} from "@mantine/core";
 import "/src/styles/global.css";
 import App from "/src/App.jsx";
 
-import HomePage from "/src/pages/HomePage/HomePage.jsx";
-import ActivityDashboardPage from "/src/pages/ActivityDashboardPage.jsx";
-import AboutUsPage from "/src/pages/AboutUsPage/AboutUsPage.jsx";
+import HomePage from "/src/pages/Home/HomePage.jsx";
+import ActivityDashboardPage from "/src/pages/ActivityDashboard/ActivityDashboardPage.jsx";
+import AboutUsPage from "/src/pages/AboutUs/AboutUsPage.jsx";
+import PartnerOrganisationsPage from "/src/pages/PartnerOrganisations/PartnerOrganisationsPage.jsx";
+import CareerGuidancePage from "/src/pages/CareerGuidance/CareerGuidancePage.jsx";
+import ApplicationGuidancePage from "/src/pages/ApplicationGuidance/ApplicationGuidancePage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -16,8 +19,10 @@ const router = createBrowserRouter([
         element: <App/>,
         children: [
             {index: true, element: <HomePage/>},
-            {path: "ActivityDashboard", element: <ActivityDashboardPage/>},
             {path: "/AboutUs", element: <AboutUsPage/>},
+            {path: "/PartnerOrganisations", element: <PartnerOrganisationsPage/>},
+            {path: "/CareerGuidance", element: <CareerGuidancePage/>},
+            {path: "/ApplicationGuidance", element: <ApplicationGuidancePage/>}
         ],
     },
 ]);
