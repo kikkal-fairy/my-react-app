@@ -11,7 +11,7 @@ const ActivityCardDisplay = ({ activitySearch }) => {
           key={activity.id}
           to={`/activity-detail/${activity.id}`}
           state={{ activity }}
-          style={{ textDecoration: 'none', color: 'inherit' }}
+          className="activity-card-link"
         >
           <ActivityCard activity={activity} />
         </Link>
