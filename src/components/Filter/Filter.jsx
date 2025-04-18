@@ -107,7 +107,7 @@ export default function Filter() {
         </div>
 
         <SelectedTags
-          title="Audience Type"
+          // title="Audience Type"
           selectedItems={selectedAudiences}
           onRemoveItem={(item) =>
             setSelectedAudiences(selectedAudiences.filter((i) => i !== item))
