@@ -118,15 +118,6 @@ button {
 
 
 
-
-
-/* Focus State */
-.dropdown-box:focus {
-  border-color: black; /* Keep the border black on focus */
-  outline: none; /* Remove the default browser outline */
-  box-shadow: none; /* Remove any box shadow if not needed */
-}
-
 /* Custom Arrow */
 .custom-arrow {
   position: absolute;

@@ -11,17 +11,17 @@ import workIcon from '/src/assets/icons/work.svg';
 const ActivityCard = ({ activity }) => {
   return (
     <Link
-    to={`/activity-detail/${activity.id}`}
+    to={`/ActivityDetail/${activity.id}`}
     state={{ activity }} // ✅ ADDED
     className="activity-card-link" // ✅ ADDED for styling
   >
 
     <div className="activity-card">
-      <span className="tag">{activity.tag}</span>
+      <span className="tag">{activity.type}</span>
 
       <h3 className="activity-title">{activity.title}</h3>
 
-      <p className="activity-description">{activity.description}</p>
+      <p className="activity-description">{activity.summary}</p>
 
       <div className="activity-details">
         <div className="detail-item">
@@ -34,7 +34,7 @@ const ActivityCard = ({ activity }) => {
         </div>
         <div className="detail-item">
           <img src={peopleIcon} alt="Audience" className="icon" />
-          <span>{activity.audience}</span>
+          <span>{Array.isArray(activity.audience) ? activity.audience.join(', ') : activity.audience}</span>
         </div>
         <div className="detail-item">
           <img src={handshakeIcon} alt="Format" className="icon" />

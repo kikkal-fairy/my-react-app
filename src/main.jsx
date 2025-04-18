@@ -1,42 +1,39 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { MantineProvider } from "@mantine/core"; // ✅ ADDED
-import "./styles/global.css";
-import App from "./App.jsx";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import Login from "./components/Login/Login.jsx";
-import Register from "./components/Register/Register.jsx";
-import ActivityDashboardPage from "./pages/ActivityDashboardPage.jsx";
-import ActivityDetailPage from "./pages/ActivityDetailPage/ActivityDetailPage.jsx";
-import SearchPage from "./pages/SearchPage.jsx";
-import ResourcesPage from "./pages/ResourcesPage.jsx";
-import LegalPage from "./pages/LegalPage.jsx";
-import Account from "./pages/Account.jsx";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {MantineProvider} from "@mantine/core";
+
+import "/src/styles/global.css";
+import App from "/src/App.jsx";
+
+import HomePage from "/src/pages/Home/HomePage.jsx";
+import ActivityDashboardPage from "/src/pages/ActivityDashboard/ActivityDashboardPage.jsx";
+import AboutUsPage from "/src/pages/AboutUs/AboutUsPage.jsx";
+import PartnerOrganisationsPage from "/src/pages/PartnerOrganisations/PartnerOrganisationsPage.jsx";
+import CareerGuidancePage from "/src/pages/CareerGuidance/CareerGuidancePage.jsx";
+import ApplicationGuidancePage from "/src/pages/ApplicationGuidance/ApplicationGuidancePage.jsx";
+import ActivityDetailPage from "/src/pages/ActivityDetail/ActivityDetailPage";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
-      { path: "activity-detail/:id", element: <ActivityDetailPage /> },
-      { path: "search", element: <SearchPage /> },
-      { path: "dashboard", element: <ActivityDashboardPage /> },
-      { path: "resources", element: <ResourcesPage /> },
-      { path: "legal", element: <LegalPage /> },
-      { path: "account", element: <Account /> },
-    ],
-  },
+    {
+        path: "/",
+        element: <App/>,
+        children: [
+            {index: true, element: <HomePage/>},
+            {path: "/AboutUs", element: <AboutUsPage/>},
+            {path: "/PartnerOrganisations", element: <PartnerOrganisationsPage/>},
+            {path: "/CareerGuidance", element: <CareerGuidancePage/>},
+            {path: "/ApplicationGuidance", element: <ApplicationGuidancePage/>},
+            {path: "/ActivityDetail/:id", element: <ActivityDetailPage/>},
+            {path: "/ActivityDashboard", element: <ActivityDashboardPage/>},
+        ],
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-        {/* ✅ WRAPPED EVERYTHING IN MantineProvider */}
+    <React.StrictMode>
         <MantineProvider withGlobalStyles withNormalizeCSS>
-      <RouterProvider router={router} />
-    </MantineProvider>
-  </React.StrictMode>
+            <RouterProvider router={router} />
+        </MantineProvider>
+    </React.StrictMode>
 );

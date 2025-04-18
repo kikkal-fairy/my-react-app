@@ -8,6 +8,7 @@ export default defineConfig({
     svgr() // ← Optional: allows you to import SVGs as React components
   ],
   server: {
+    historyApiFallback: true,
     port: 5173,        // Custom port
     open: true         // Open browser on server start
   },

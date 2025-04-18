@@ -1,4 +1,4 @@
-.header {
+/* .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,4 +49,67 @@
   .header-buttons button:hover {
     background-color: #002c7f;
   }
+   */
+   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem; /* Adjusted padding for more spacing */
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+  }
   
+  /* Header Container */
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between; /* Ensures space between elements */
+  }
+  
+  /* Logo */
+  .logo {
+    height: 150px; /* Adjust the logo size */
+    width: auto;
+    margin-right: 30px; /* Added margin for spacing from the title */
+  }
+  
+  /* Title Text */
+  .header-text {
+    margin-left: 20px;
+  }
+  
+  .header-text h1 {
+    font-size: 2rem; /* Adjusted font size to match design */
+    font-weight: 700;
+  }
+  
+  .header-text h4 {
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: 100;
+    color: #666; /* Slightly lighter color for description */
+  }
+  
+  /* Buttons (Sign In and Register) */
+  .header-buttons {
+    display: flex;
+    gap: 20px; /* Increased gap for spacing between buttons */
+    align-items: center;
+    margin-top:70px;
+  }
+  
+  .header-buttons button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #003eb3;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 100;
+    transition: background-color 0.3s ease;
+    height: 50px;
+  }
+  
+  .header-buttons button:hover {
+    background-color: #002c7f;
+  } 

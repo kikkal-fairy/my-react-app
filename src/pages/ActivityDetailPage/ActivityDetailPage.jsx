@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Header from '../../components/Header/Header.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import Navigation from '../../components/Navigation/Navigation.jsx';
+import LocationIcon from '../../assets/icons/location_on-2.svg'; 
+import LocationIcon2 from '../../assets/icons/location_on.svg'; 
+import CalendarIcon from '../../assets/icons/calendar_today.svg';
+import MinusIcon from '../../assets/icons/minus.svg';
+import PlusIcon from '../../assets/icons/plus.svg';
 import './ActivityDetailPage.css';
 
 const ActivityDetailPage = () => {
   const { state } = useLocation();
   const activity = state?.activity;
+  const [seats, setSeats] = useState(1);
 
   if (!activity) {
     return (
       <>
         <Header />
         <Navigation />
-        <div className="activity-detail-page">
+        <div className="activity-detail-container">
           <p>No activity found.</p>
         </div>
+
         <Footer />
       </>
     );
@@ -26,82 +33,117 @@ const ActivityDetailPage = () => {
     <>
       <Header />
       <Navigation />
-      <div className="activity-detail-page">
-        <Link to="/" className="back-link">← Back to Activities</Link>
-
-        <div className="detail-layout">
-          <div className="main-content">
-            <span className="tag">{activity.tag}</span>
+      <div className="activity-detail-wrapper">
+         {/* 🔷 Top Row: Tag, Title, Provider Label */}
+         <div className="back-link">
+          <Link to="/" className="back-text">← Back to Activities</Link>
+          </div>
+         <div className="top-meta-row">
+          <span className="tag">{activity.tag}</span>
+          <div className="provider-label">Provided by {activity.provider}</div>
+         </div>
+        
+           <div className="activity-detail-main">
+            <div className="left-section">
             <h1 className="activity-title">{activity.title}</h1>
             <p className="description">{activity.description}</p>
 
-            <h3>Activity Description</h3>
-            <ul className="description-list">
-                <p>Lorem ipsum dolor sit amet consectetur. 
-                    Vitae odio amet a ullamcorper at eu sagittis vitae id. 
-                    Mattis mus magna eget consectetur sed ut magna. 
-                    Quisque eleifend quis arcu aliquam. 
-                    Nec hendrerit quis in varius sed pharetra turpis.
-                     Tincidunt pharetra tortor pellentesque convallis tortor massa proin. 
-                     Leo sollicitudin ullamcorper ut ut non mauris. 
-                     Dictum commodo suspendisse tellus enim faucibus sodales nullam neque.</p>
-              <li>Lorem ipsum dolor sit amet consectetur.</li>
-              <li>Mattis mus magna eget consectetur sed urna magna.</li>
-              <li>Nec hendrerit quis in varius sed pharetra turpis.</li>
-              <li>Leo sollicitudin ullamcorper ut et non mauris.</li>
-            </ul>
+            <h3 className="description-heading">Activity Description</h3>
+            <div className="description-container">
+            <p className="description-text">
+           Lorem ipsum dolor sit amet consectetur. Vitae odio amet a ullamcorper at eu sagittis vitae id. 
+           Mattis mus magna eget consectetur sed ut magna. Quisque eleifend quis arcu aliquam. 
+           Nec hendrerit quis in varius sed pharetra turpis. Tincidunt pharetra tortor pellentesque convallis tortor massa proin. 
+           Leo sollicitudin ullamcorper ut ut non mauris. Dictum commodo suspendisse tellus enim faucibus sodales nullam neque.
+            </p> <br />
 
+           <ul className="description-list">
+           <li>Lorem ipsum dolor sit amet consectetur. Vitae odio amet a ullamcorper at eu sagittis vitae id.</li>
+           <li>Mattis mus magna eget consectetur sed ut magna. Quisque eleifend quis arcu aliquam.</li>
+           <li>Nec hendrerit quis in varius sed pharetra turpis. Tincidunt pharetra tortor pellentesque convallis tortor massa proin.</li>
+           <li>Leo sollicitudin ullamcorper ut ut non mauris. Dictum commodo suspendisse tellus enim faucibus sodales nullam neque.</li>
+           </ul>
+           </div>
+           </div>
+
+           <div className="right-section">
+           <div className="join-card">
+           <h3 className="section-heading">Join Our Activity</h3>
+
+           <div className="info-box">
+           <p className="label">Activity</p>
+           <p className="text">Career Insight</p>
+           </div>
+
+           <div className="info-box">
+           <p className="label">
+            <img src={LocationIcon2} alt="Location icon" className="info-icon" />
+            Activity Location</p>
+           <p className="text">{activity.location}</p>
+           </div>
+
+           <div className="info-box">
+           <p className="label">
+           <img src={CalendarIcon} alt="Calendar icon" className="info-icon" />
+            Activity Date</p>
+           <p className="text">{activity.date}</p>
+           </div>
+
+           <div className="seat-reservation">
+           <p className="label">Reserve Your Seat</p>
+ 
+           <div className="seat-counter-wrapper">
+           <button className="seat-btn minus">
+           <img src={MinusIcon} alt="minus" className="icon-svg" />
+           </button>
+
+           <div className="seat-value">1</div>
+
+           <button className="seat-btn plus">
+           <img src={PlusIcon} alt="plus" className="icon-svg white-icon" />
+           </button>
+ 
+           </div>
+           <button className="apply-button">Apply</button>
+           </div>
+           </div>
+           </div>
+           </div>
+
+            <div className='bottom-wrapper'>
+            
+            <div className="activity-detail-bottom">
             <div className="info-grid">
-              <div><strong>Audience:</strong><br />{activity.audience}</div>
-              <div><strong>Eligibility Criteria:</strong><br />Gender Equality</div>
-              <div><strong>Fees:</strong><br />Free</div>
-              <div><strong>Group Size:</strong><br />1–30</div>
-              <div><strong>Delivery Method:</strong><br />{activity.format}</div>
-              <div><strong>Duration:</strong><br />{activity.duration}</div>
+              <div><strong>Audience:</strong><br /><p>Secondary (S4-S6)</p>
+              <p>Educators</p> </div>
+              <div><strong>Eligibility Criteria:</strong><br /><p>Gender Equality</p></div>
+              <div><strong>Group Size:</strong><br /><p>1–30</p></div>
+              <div><strong>Fees:</strong><br /><p>Free</p></div>
+              <div><strong>Delivery Method:</strong><br /><p>{activity.format}</p></div>
+              <div><strong>Duration:</strong><br /><p>{activity.duration}</p></div>
             </div>
 
-            <div className="tags-section">
-              <button className="tag-btn">Local Authority</button>
-              <button className="tag-btn">Aberdeen City</button>
-              <button className="tag-btn">Aberdeenshire</button>
-              <button className="tag-btn">Dundee</button>
-              {/* Add more tags if needed */}
-            </div>
+            <div className="local-authority-label">
+            <img src={LocationIcon} alt="Location Icon" className="location-icon" />
+            Local Authority
+           </div>
+
+            <div className="local-authority-tags">
+             {['Aberdeen City', 
+             'Aberdeenshire', 'Aberdeenshire', 'Aberdeenshire', 
+             'Aberdeenshire', 'Aberdeenshire', 'Aberdeenshire',
+              'Aberdeenshire', 'Aberdeenshire'].map((authority, i) => (
+             <button className="tag-btn" key={i}>{authority}</button>
+            ))}
+           </div>
 
             <div className="further-info">
               <strong>Further Information</strong><br />
               Contact: nhseducation.ac.uk
-            </div>
           </div>
-
-          <div className="side-panel">
-            <p className="provider-label">Provided by {activity.provider}</p>
-            <div className="join-card">
-            <h3 className="side-title">Join Our Activity</h3>
-              <p className="label">Activity</p>
-              <p className="text">{activity.title}</p>
-
-              <p className="label">Activity Location</p>
-              <p className="text">{activity.location}</p>
-
-              <p className="label">Activity Date</p>
-              <p className="text">{activity.date}</p>
-
-              <div className="counter">
-                <p className="label">Reserve Your Seat</p>
-                <div className="count-controls">
-                  <button>-</button>
-                  <span>1</span>
-                  <button>+</button>
-                </div>
-              </div>
-
-              <button className="apply-btn">Apply</button>
-            </div>
           </div>
-        </div>
-      </div>
-      <Footer />
+          </div>
+          </div>
     </>
   );
 };

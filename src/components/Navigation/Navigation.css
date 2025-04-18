@@ -1,7 +1,7 @@
 .nav-bar {
     background-color: #002c7f;
     padding: 1rem;
-    text-align: center;
+    text-align: left;
     font-weight: 100;
   }
   
@@ -18,4 +18,12 @@
     background-color: #001a4b;
     padding: 12px 15px;
   }
-  
+  .nav-bar .home-button {
+    color: white;
+    margin: 0 1.2rem;
+    text-decoration: none;
+    font-weight: 100;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+    margin-left:90px
+  }
