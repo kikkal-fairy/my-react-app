@@ -22,7 +22,7 @@ const EventForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/add-post', {
+        const response = await fetch('http://localhost:5050/add-post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

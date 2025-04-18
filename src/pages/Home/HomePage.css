@@ -1,90 +1,87 @@
-/* Homepage Layout */
+/* === Homepage Wrapper === */
 .homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 24px;
+}
+.content-container {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
 }
 
-.filter-container {
+.filter-column {
+  flex: 1;
+  max-width: 300px;
+}
+
+.activity-column {
+  flex: 3;
+  width: 100%;
+}
+
+/* === Header Above Activity List === */
+.activity-list-header {
   display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 326px;
-    margin-top: 20px;
-    padding-top: 16px;
-    padding-bottom: 24px;
-    background-color: white; /* 🧼 Change from lightgrey to white */
-    transition: box-shadow 0.3s ease;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
 
-  }
-  
+.activity-count {
+  font-size: 16px;
+  color: #333;
+}
+
+.sort-select-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.sort-label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.arrow-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-icon {
+  width: 10px;
+  height: 5px;
+  background-color: #333;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* === Responsive Layout === */
+@media (max-width: 768px) {
   .content-container {
-    display: flex;
-    gap: 32px;
-    padding: 16px;
-    max-width: 1200px;
-    margin: auto;
-    align-items: flex-start;
-  }
-  
-  .filter-column {
-    flex: 1;
-    max-width: 300px;
-  }
-  
-  
-  .search-bar-wrapper {
-    margin-bottom: 32px;
-  }
-  
-  .activity-header-wrapper {
-    margin-bottom: 16px;
+    flex-direction: column;
   }
 
-  .sort-select-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 4px 8px 8px;
-    cursor: pointer;
-    
-    background-color: white;
-  }
-  
-  .sort-label {
-    font-size: 16px;
-    font-weight: 700;
-    color: #333;
-  }
-  
-  .arrow-wrapper {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .arrow-icon {
-    width: 10px;
-    height: 5px;
-    background-color: #333333;
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  .filter-column,
+  .activity-column {
+    max-width: 100%;
   }
 
   .activity-list-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
-
-
-
-
-
-
-  
-  
+}
+s

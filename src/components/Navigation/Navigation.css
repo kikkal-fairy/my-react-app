@@ -13,11 +13,15 @@
     padding: 15px;
     transition: background-color 0.3s ease;
   }
-  
+  .nav-bar a:last-child {
+    border-right: none;
+  }
+
   .nav-bar a:hover {
     background-color: #001a4b;
     padding: 12px 15px;
   }
+  
   .nav-bar .home-button {
     color: white;
     margin: 0 1.2rem;

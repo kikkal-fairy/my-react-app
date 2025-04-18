@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import './ActivityCard.css';
+
 import locationIcon from '/src/assets/icons/location_on.svg';
 import calendarIcon from '/src/assets/icons/calendar_today.svg';
 import peopleIcon from '/src/assets/icons/people.svg';
 import handshakeIcon from '/src/assets/icons/handshake.svg';
 import accessTimeIcon from '/src/assets/icons/access_time.svg';
 import workIcon from '/src/assets/icons/work.svg';
+import './ActivityCard.css';
 
 const ActivityCard = ({ activity }) => {
   return (
