@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './Register.css';
 import NESLogo from '../../assets/nes-logo.png';
 import backicon from '../../assets/backicon.png';
-import response from "assert";
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -60,14 +59,24 @@ const Register = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, email, password })
-      })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const errorMsg = data.errors?.[0]?.msg || data.message || 'Registration failed';
+        setError(errorMsg);
+        setSuccess('');
+      } else {
+        setSuccess('Registration successful!');
+        setError('');
+      }
     } catch (err) {
-      setError(err.response.data.message || 'Error during registration');
-    }
-    if (response.ok) {
-      setSuccess('Registration successful!');
+      setError('Network error. Please try again.');
+      setSuccess('');
     }
   };
+
 
   return (
     <div className="login-container">
