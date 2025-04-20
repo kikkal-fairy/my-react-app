@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import FilterSearchBar from '../../components/FilterSearchBar/FilterSearchBar';
-import ActivityCardDisplay from '../../components/ActivityCardDisplay/ActivityCardDisplay';
-import Header from '../../components/Header/Header.jsx';
-import Navigation from '../../components/Navigation/Navigation.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
-import UserRoleSwitch from '../../components/UserRoleSwitch/UserRoleSwitch';
-import Filter from '../../components/Filter/Filter';
-import CustomPagination from '../../components/CustomPagination/CustomPagination';
+import FilterSearchBar from '/src/components/FilterSearchBar/FilterSearchBar';
+import ActivityCardDisplay from '/src/components/ActivityCardDisplay/ActivityCardDisplay';
+import UserRoleSwitch from '/src/components/UserRoleSwitch/UserRoleSwitch';
+import Filter from '/src/components/Filter/Filter';
+import CustomPagination from '/src/components/CustomPagination/CustomPagination';
 import './HomePage.css';
 
 const fallbackActivities = [
@@ -64,7 +61,7 @@ const HomePage = () => {
         setActivities(data);
       } catch (error) {
         console.error('Failed to fetch posts:', error);
-        setActivities(fallbackActivities); // ✅ fallback if fetch fails
+        setActivities(fallbackActivities);
       }
     };
 
