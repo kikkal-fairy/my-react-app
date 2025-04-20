@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import './Login.css';
-import NESLogo from '../../assets/nes-logo.png';
-import backicon from '../../assets/backicon.png';
+import NESLogo from '/src/assets/nes-logo.png';
+import backicon from '/src/assets/backicon.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import './Register.css';
 import NESLogo from '../../assets/nes-logo.png';
 import backicon from '../../assets/backicon.png';
+import response from "assert";
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -54,12 +54,19 @@ const Register = () => {
     }
 
     try {
-      // Send POST request to register endpoint
-      const response = await axios.post('http://localhost:5000/api/auth/register', { username, email, password });
-      setSuccess('Registration successful');
-      setError('');
+      const response = await fetch('http://localhost:5050/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, email, password })
+      })
     } catch (err) {
       setError(err.response.data.message || 'Error during registration');
+    }
+
+    if (response.ok) {
+      setSuccess('Registration successful!');
     }
   };
 
