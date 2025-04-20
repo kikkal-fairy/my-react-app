@@ -64,7 +64,6 @@ const Register = () => {
     } catch (err) {
       setError(err.response.data.message || 'Error during registration');
     }
-
     if (response.ok) {
       setSuccess('Registration successful!');
     }
@@ -82,7 +81,6 @@ const Register = () => {
             </p>
           </Link>
         </div>
-        <h2 className="placeholder">.</h2> {/* Makeshift div so that content centers correctly*/}
         <img src={NESLogo} alt="NES Logo" className="logo" />
         <h2>Register Your Account</h2>
         <form onSubmit={handleSubmit}>

@@ -23,7 +23,7 @@ const Login = () => {
 
     try {
       // Send POST request to login endpoint
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const response = await axios.post('http://localhost:5050/login', { email, password });
 
       // Store JWT tokens in localStorage
       localStorage.setItem('accessToken', response.data.accessToken);
@@ -46,7 +46,6 @@ const Login = () => {
               </p>
           </Link>
         </div>
-        <h2 className="placeholder">.</h2> {/* Makeshift div so that content centers correctly*/}
         <img src={NESLogo} alt="NES Logo" className="logo" />
         <h2>Welcome to Our Outreach Hub</h2>
         <form onSubmit={handleSubmit}>
