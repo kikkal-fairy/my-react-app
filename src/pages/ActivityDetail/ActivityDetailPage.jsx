@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import LocationIcon from '../../assets/icons/location_on-2.svg'; 
-import LocationIcon2 from '../../assets/icons/location_on.svg'; 
-import CalendarIcon from '../../assets/icons/calendar_today.svg';
-import MinusIcon from '../../assets/icons/minus.svg';
-import PlusIcon from '../../assets/icons/plus.svg';
+import LocationIcon from '/src/assets/icons/location_on-2.svg';
+import LocationIcon2 from '/src/assets/icons/location_on.svg';
+import CalendarIcon from '/src/assets/icons/calendar_today.svg';
+import MinusIcon from '/src/assets/icons/minus.svg';
+import PlusIcon from '/src/assets/icons/plus.svg';
 import './ActivityDetailPage.css';
 
 const ActivityDetailPage = () => {
@@ -126,15 +126,13 @@ const ActivityDetailPage = () => {
                     <div className="activity-detail-bottom">
                         <div className="info-grid">
                             <div>
-                                <strong>Audience:</strong>
-                                <br />
-                                <p>Secondary (S4-S6)</p>
-                                <p>Educators</p>
+                                <strong>Audience:</strong><br />
+                                <p>{Array.isArray(activity.audience) ? activity.audience.join(', ') : activity.audience}</p>
                             </div>
 
-                            <div><strong>Eligibility Criteria:</strong><br /><p>Gender Equality</p></div>
-                            <div><strong>Group Size:</strong><br /><p>1–30</p></div>
-                            <div><strong>Fees:</strong><br /><p>Free</p></div>
+                            <div><strong>Eligibility Criteria:</strong><br /><p>Gender Equality</p></div> {/* Placeholder */}
+                            <div><strong>Group Size:</strong><br /><p>{activity.size}</p></div>
+                            <div><strong>Fees:</strong><br /><p>Free</p></div> {/* Placeholder */}
                             <div><strong>Delivery Method:</strong><br /><p>{activity.format}</p></div>
                             <div><strong>Duration:</strong><br /><p>{activity.duration}</p></div>
 
