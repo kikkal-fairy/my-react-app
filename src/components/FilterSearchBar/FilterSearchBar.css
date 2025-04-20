@@ -7,9 +7,10 @@
   }
   
   .filter-search-input-wrapper {
-    flex: 1;
+    flex: 0.05;
     display: flex;
     width: 100%;
+    height: 10%;
     align-items: stretch;
     background-color: white;
     border: 1px solid #333333;

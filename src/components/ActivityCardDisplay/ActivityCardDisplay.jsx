@@ -1,16 +1,22 @@
-// ✅ FIXED VERSION of ActivityCardDisplay.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ActivityCardDisplay.css';
-import ActivityCard from '../../components/ActivityCard/ActivityCard';
+import ActivityCard from '/src/components/ActivityCard/ActivityCard';
 
 const ActivityCardDisplay = ({ activitySearch }) => {
   return (
-    <div className="activity-grid">
-      {activitySearch?.map((activity) => (
-        <ActivityCard key={activity.id} activity={activity} />
-      ))}
-    </div>
+      <div>
+        {activitySearch?.map(activity => (
+            <Link
+                key={activity.id}
+                to={`/ActivityDetail/${activity.id}`}
+                state={{ activity }}
+                className="activity-card-link"
+            >
+              <ActivityCard activity={activity} />
+            </Link>
+        ))}
+      </div>
   );
-};
-
+}
 export default ActivityCardDisplay;

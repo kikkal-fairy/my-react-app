@@ -13,8 +13,8 @@ const ActivityCard = ({ activity }) => {
   return (
     <Link
     to={`/ActivityDetail/${activity.id}`}
-    state={{ activity }} // ✅ ADDED
-    className="activity-card-link" // ✅ ADDED for styling
+    state={{ activity }}
+    className="activity-card-link"
   >
 
     <div className="activity-card">

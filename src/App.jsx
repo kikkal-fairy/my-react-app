@@ -1,23 +1,27 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from '/src/components/Header/Header.jsx';
 import Navigation from '/src/components/Navigation/Navigation.jsx';
-import Footer from '/src/components/Footer/Footer.jsx';
-import '/src/styles/global.css';
+import Footer from "/src/components/Footer/Footer";
+import "/src/styles/global.css";
 
 function App() {
-  return (
-    <div className="app-container">
-      <Header />
-      <Navigation />
+    const location = useLocation();
 
-      <main className="main-content">
-        <Outlet /> {/* This will render the matched route page (e.g. HomePage, AboutUs) */}
-      </main>
+    const excludedPaths = ['/login', '/register'];
 
-      <Footer />
-    </div>
-  );
+    const hideLayout = excludedPaths.includes(location.pathname);
+
+    return (
+        <div className="app-container">
+            <main className="main-content">
+                {!hideLayout && <Header />}
+                {!hideLayout && <Navigation />}
+                <Outlet />
+                {!hideLayout && <Footer />}
+            </main>
+        </div>
+    );
 }
 
 export default App;
