@@ -11,7 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();  // Import useNavigate
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,14 +22,9 @@ const Login = () => {
     }
 
     try {
-      // Send POST request to login endpoint
       const response = await axios.post('http://localhost:5050/login', { email, password });
-
-      // Store JWT tokens in localStorage
       localStorage.setItem('accessToken', response.data.accessToken);
-
-      // Redirect to home page after successful login
-      navigate('/');  // Navigate to Home page
+      navigate('/');
     } catch (err) {
       setError('Invalid credentials');
     }

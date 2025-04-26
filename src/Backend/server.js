@@ -1,4 +1,3 @@
-// backend/server.js
 const express = require('express');
 const cors = require('cors');
 
@@ -101,7 +100,9 @@ app.get('/posts/:id', (req, res) => {
 });
 
 app.post('/register', [
-  body('email').isEmail().withMessage('Please enter a valid email.'),
+  body('email')
+      .isEmail()
+      .withMessage('Please enter a valid email.'),
   body('password')
       .isLength({ min: 8 })
       .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
@@ -109,15 +110,17 @@ app.post('/register', [
   body('username')
       .isLength({ min: 3 })
       .withMessage('Username must be at least 3 characters long.'),
+  body('account_type')
+      .isIn(['student', 'educator', 'parent', 'provider'])
+      .withMessage('Invalid account type.'),
 ], async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { username, email, password } = req.body;
+  const { username, email, password, account_type } = req.body;
 
-  // Check if user exists
   db.get('SELECT * FROM Users WHERE email = ?', [email], async (err, row) => {
     if (err) {
       console.error('Error checking for user:', err.message);
@@ -131,8 +134,8 @@ app.post('/register', [
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
       db.run(
-          'INSERT INTO Users (username, email, password) VALUES (?, ?, ?)',
-          [username, email, hashedPassword],
+          'INSERT INTO Users (username, email, password, account_type) VALUES (?, ?, ?, ?)',
+          [username, email, hashedPassword, account_type],
           function (err) {
             if (err) {
               console.error('Error inserting user:', err.message);
@@ -148,31 +151,32 @@ app.post('/register', [
   });
 });
 
-/*router.post('/login', [
-  body('email').isEmail().withMessage('Please enter a valid email.'),
-  body('password').isLength({ min: 8 }).withMessage('Password must be at least 8 characters.'),
-], async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
 
+
+app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
-  db.get('SELECT * FROM Users WHERE email = ?', [email], async (err, row) => {
-    if (err || !row) {
-      return res.status(400).json({ message: 'Invalid credentials' });
+  db.get('SELECT * FROM Users WHERE email = ?', [email], async (err, user) => {
+    if (err) {
+      return res.status(500).json({ message: 'Database error' });
     }
 
-    const isMatch = await bcrypt.compare(password, row.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid credentials' });
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid email or password' });
     }
 
-    const accessToken = jwt.sign({ userId: row.id }, 'your-secret-key', { expiresIn: '1h' });
-    const refreshToken = jwt.sign({ userId: row.id }, 'your-refresh-secret-key', { expiresIn: '7d' });
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
 
-    res.json({ accessToken, refreshToken });
+    const secretKey = process.env.JWT_SECRET || 'dev_secret_key';
+    const accessToken = jwt.sign(
+        { id: user.id, email: user.email, account_type: user.account_type },
+        secretKey,
+        { expiresIn: '1h' }
+    );
+
+    res.status(200).json({ accessToken });
   });
 });
-*/

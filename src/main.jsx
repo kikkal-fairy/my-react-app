@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
+import { AuthProvider } from '/src/context/AuthContext';
 
 import "/src/styles/global.css";
 import App from "/src/App.jsx";
@@ -38,9 +39,11 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <MantineProvider withGlobalStyles withNormalizeCSS>
-      <RouterProvider router={router} />
-    </MantineProvider>
+    <React.StrictMode>
+        <AuthProvider>
+            <MantineProvider withGlobalStyles withNormalizeCSS>
+                <RouterProvider router={router} />
+            </MantineProvider>
+        </AuthProvider>
   </React.StrictMode>
 );

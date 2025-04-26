@@ -1,6 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
 
-// Create and connect to SQLite database (authDB.db)
 const db = new sqlite3.Database('./authDB.db', (err) => {
     if (err) {
         console.error("Error opening database:", err.message);
@@ -9,7 +8,6 @@ const db = new sqlite3.Database('./authDB.db', (err) => {
     }
 });
 
-// Create Posts table if it does not exist
 db.run(`
     CREATE TABLE IF NOT EXISTS Posts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -38,7 +36,8 @@ db.run(`
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT UNIQUE,
         email TEXT UNIQUE,
-        password TEXT
+        password TEXT,
+        account_type TEXT
     );
 `, (err) => {
     if (err) {
