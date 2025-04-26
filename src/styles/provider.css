@@ -1,0 +1,139 @@
+/* Dashboard */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5vh;
+  width: 90vh;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
+.stats-box {
+  border: 1px solid #333333;
+  width: 50%;
+  text-align: center;
+}
+
+.bookings-box {
+  border: 1px solid #333333;
+  width: 50%;
+  text-align: center;
+}
+
+.feedback-box {
+  border: 1px solid #333333;
+  width: 100%;
+  text-align: center;
+}
+
+/* Applicants Chart & Calendar */
+
+.dashboard-chart {
+  height: 100%;
+  padding: 15px 0px 15px 0px;
+}
+
+.calendar-container {
+  height: 100%;
+  padding: 10px 0px 10px 0px;
+}
+
+/* Published Posts */
+
+.provider-activity-card {
+  background-color: #fff;
+  border-radius: 0;
+  padding: 8px 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin: 0;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  text-decoration: none; /* Removes underline from text */
+  color: inherit; /* Keep the original text color */
+}
+
+.published-count {
+  padding: 15px 15px 30px 0;
+}
+
+/* Provider Detail */
+
+.provider-detail-page {
+  width: 75vw;;
+  margin: auto;
+  padding: 32px 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.provider-button-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5vh;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.provider-button-box {
+  border: 1px solid #333333;
+  text-align: center;
+  padding: 30px 0;
+  height: 200px;
+  font-size: smaller;
+  width: 100%;
+}
+
+.provider-button-box h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.active-button-box {
+  border: 2px solid #002c7f;
+  text-align: center;
+  padding: 30px 0;
+  height: 200px;
+  font-size: smaller;
+  width: 100%;
+}
+
+.active-button-box h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.provider-button-link {
+  text-decoration: none;
+  color: inherit;
+  width: 20%;
+}
+
+.applicant-table {
+  width: 100%;
+  text-align: left;
+}
+
+.applicant-numbers {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.provider-table, td, th {
+  border: 1px solid #333333;
+  padding: 20px;
+  text-align: left;
+}
+
+.provider-table {
+  border-collapse: collapse;
+  width: 100%;
+}

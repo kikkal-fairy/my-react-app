@@ -5,6 +5,7 @@ import { MantineProvider } from "@mantine/core";
 import { AuthProvider } from '/src/context/AuthContext';
 
 import "/src/styles/global.css";
+import "/src/styles/provider.css";
 import App from "/src/App.jsx";
 
 // 🔹 Pages
@@ -18,6 +19,14 @@ import ActivityDetailPage from "/src/pages/ActivityDetail/ActivityDetailPage.jsx
 
 import Login from "/src/pages/Login/Login.jsx";
 import Register from "/src/pages/Register/Register.jsx";
+
+import ProviderDashboard from "/src/pages/ProviderPages/ProviderDashboard.jsx"
+import ProviderCreate from "/src/pages/ProviderPages/ProviderCreate.jsx"
+import ProviderPublished from "/src/pages/ProviderPages/ProviderPublished.jsx"
+import ProviderDetailPage from "./pages/ProviderPages/ProviderDetailPage.jsx";
+import ProviderApplicantPage from "./pages/ProviderPages/ProviderApplicantPage.jsx";
+import ProviderBookingsPage from "./pages/ProviderPages/ProviderBookingsPage.jsx";
+import ProviderFeedbackPage from "./pages/ProviderPages/ProviderFeedbackPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +43,14 @@ const router = createBrowserRouter([
 
             {path: "/Login", element: <Login/>},
             {path: "/Register", element: <Register/>},
+
+            { path: "dashboard", element: <ProviderDashboard /> },
+            { path: "create", element: <ProviderCreate /> },
+            { path: "published", element: <ProviderPublished /> },
+            { path: "provider-detail/:id/", element: <ProviderDetailPage />},
+            { path: "provider-detail/:id/applicants", element: <ProviderApplicantPage /> },
+            { path: "provider-detail/:id/bookings", element: <ProviderBookingsPage /> },
+            { path: "provider-detail/:id/feedback", element: <ProviderFeedbackPage /> }
         ],
     },
 ]);
