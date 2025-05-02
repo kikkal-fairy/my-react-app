@@ -11,18 +11,17 @@ const ProviderPublished = () => {
 
   return (
     <div>
-    <ProviderNavigation />
-    <div className="publishedpage">
-      <div className="content-container">
-        <div className="activity-column">
-          <h2>Published Posts</h2>
-          {/* Search Bar & Activity Cards */}
-          <div className="search-bar-wrapper">
-            <FilterPublished activities={activities} username={username} />
+      <div className="publishedpage">
+        <div className="content-container">
+          <div className="activity-column">
+            <h2>Published Posts</h2>
+            {/* Search Bar & Activity Cards */}
+            <div className="search-bar-wrapper">
+              <FilterPublished activities={activities} username={username} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

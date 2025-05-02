@@ -4,8 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin: auto;
   gap: 5vh;
-  width: 90vh;
+  width: 50%;
+}
+
+.create-button{
+  width: 10%
 }
 
 .box-container {

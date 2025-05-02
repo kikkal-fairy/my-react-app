@@ -3,7 +3,7 @@
 }
 
 .event-form {
-    width: 40%;
+    width: 80%;
     margin: auto;
     background: #ffffff;
     padding: 20px;
@@ -17,6 +17,11 @@
     text-align: center;
     font-size: 32px;
     margin-bottom: 20px;
+}
+
+.form-header{
+    text-align: center;
+    font-size: 40px;
 }
 
 .form-group,

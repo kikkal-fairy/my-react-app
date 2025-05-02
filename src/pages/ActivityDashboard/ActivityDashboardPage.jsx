@@ -8,21 +8,8 @@ const ActivityDashboardPage = () => {
 
     return (
         <div className="dashboard-container">
-            <h1>Activity Dashboard</h1>
-            <p>Manage and create activity posts.</p>
-
-            {/* Toggle the event form */}
-            <button
-                onClick={() => setShowForm(!showForm)}
-            >
-                {showForm ? "Close Form" : "Create New Activity"}
-            </button>
-
-            {/* Show Event Form */}
-            {showForm && <EventForm onEventAdded={() => setRefresh(!refresh)} />}
-
-            {/* List of Events */}
-            <h2>Recent Activities</h2>
+            <h1 className="form-header">Activity Dashboard</h1>
+            <EventForm onEventAdded={() => setRefresh(!refresh)} />
         </div>
     );
 };

@@ -8,7 +8,7 @@ const ProviderActivityCardDisplay = ({ activitySearch }) => {
       {activitySearch?.map(activity => (
         <Link
           key={activity.id}
-          to={`/provider-detail/${activity.id}`}
+          to={`/ProviderDetail/${activity.id}`}
           state={{ activity }}
           style={{ textDecoration: 'none', color: 'inherit' }}
         >

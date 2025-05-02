@@ -44,13 +44,12 @@ const router = createBrowserRouter([
             {path: "/Login", element: <Login/>},
             {path: "/Register", element: <Register/>},
 
-            { path: "dashboard", element: <ProviderDashboard /> },
-            { path: "create", element: <ProviderCreate /> },
-            { path: "published", element: <ProviderPublished /> },
-            { path: "provider-detail/:id/", element: <ProviderDetailPage />},
-            { path: "provider-detail/:id/applicants", element: <ProviderApplicantPage /> },
-            { path: "provider-detail/:id/bookings", element: <ProviderBookingsPage /> },
-            { path: "provider-detail/:id/feedback", element: <ProviderFeedbackPage /> }
+            { path: "/ProviderDashboard", element: <ProviderDashboard /> },
+            { path: "/Published", element: <ProviderPublished /> },
+            { path: "/ProviderDetail/:id/", element: <ProviderDetailPage />},
+            { path: "/ProviderDetail/:id/Applicants", element: <ProviderApplicantPage /> },
+            { path: "/ProviderDetail/:id/Bookings", element: <ProviderBookingsPage /> },
+            { path: "/ProviderDetail/:id/Feedback", element: <ProviderFeedbackPage /> }
         ],
     },
 ]);

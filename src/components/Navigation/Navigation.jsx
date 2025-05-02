@@ -7,9 +7,10 @@ const ProviderNavigation = () => (
     <nav className="nav-bar">
         <Link to="/" className="home-button">Home</Link>
         <Link to="/ActivityDashboard">Dashboard</Link>
-        <Link to="/">Published Posts</Link>
+        <Link to="/Published">Published Posts</Link>
         <Link to="/">Booking Schedules</Link>
         <Link to="/">Archived</Link>
+        <Link to="/ProviderDashboard">Provider Dashboard (Temp)</Link>
     </nav>
 );
 
@@ -20,7 +21,6 @@ const GeneralNavigation = () => (
         <Link to="/PartnerOrganisations">Partner Organisations</Link>
         <Link to="/CareerGuidance">Career Guidance</Link>
         <Link to="/ApplicationGuidance">Application Guidance</Link>
-        <Link to="/ActivityDashboard">Add post (Temporary)</Link>
     </nav>
 );
 
